@@ -1,9 +1,13 @@
-# Use the official Nginx base image
-FROM nginx:latest
+FROM node:16-alpine as  builder 
 
-# Copy the HTML file into the Nginx default web root directory
+RUN mkdir /app && chown node:node /app
+WORKDIR /app
+USER node
+COPY --chown=node:node package.json package-lock.json* ./
+RUN npm install
+COPY --chown=node:node . .
+RUN npm run build
 
-
-# Expose the Nginx default port (port 80)
+FROM nginx:alpine
 EXPOSE 80
-
+COPY --from=builder  /app/build  /usr/share/nginx/html
