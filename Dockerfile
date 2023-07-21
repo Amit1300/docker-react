@@ -1,4 +1,4 @@
-FROM node:16-alpine as builder
+FROM node:16-alpine 
 
 RUN mkdir /app && chown node:node /app
 WORKDIR /app
