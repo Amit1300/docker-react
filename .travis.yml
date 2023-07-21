@@ -10,10 +10,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
-  app: "react-app"
+  app: "react"
   env: "React-app-env"
   bucket_name: "elasticbeanstalk-ap-south-1-160053629525"
-  bucket_path: "react-app"
+  bucket_path: "react"
   access_key_id: $ACCESSKEYID
   secret_access_key: "$SECRETACCESSKEY"
   on:
