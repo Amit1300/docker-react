@@ -11,7 +11,7 @@ deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
   app: "react"
-  env: "React-app-env"
+  env: "React-env"
   bucket_name: "elasticbeanstalk-ap-south-1-160053629525"
   bucket_path: "react"
   access_key_id: $ACCESSKEYID
